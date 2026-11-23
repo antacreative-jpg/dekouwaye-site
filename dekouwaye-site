@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mes favoris – DEKOUWAYE</title>
+<meta name="description" content="Vos logements favoris.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="favs" class="">
+<div id="site-header"></div>
+<main class="pale-page"><div class="wrap"><div class="page-top"><h1>Mes favoris</h1></div><div id="favlist" style="padding-bottom:80px"></div></div></main>
+<div id="site-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact – DEKOUWAYE</title>
+<meta name="description" content="Contactez DEKOUWAYE.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contact" class="">
+<div id="site-header"></div>
+<main class="pale-page"><div class="wrap"><div class="page-top"><span class="eyebrow">Contact</span><h1>Parlons de votre projet</h1>
+ <p class="muted" style="margin-top:10px;max-width:620px">Cette page de démonstration ne reçoit pas encore de messages. Les coordonnées officielles pourront être ajoutées lorsqu’elles seront disponibles.</p></div>
+ <div class="form-card" style="margin-top:12px">
+  <h2>Une question sur un logement ?</h2>
+  <p class="muted" style="margin-bottom:22px">Consultez les informations de l’annonce. Les coordonnées des propriétaires ne sont pas disponibles pour les logements de démonstration. <a href="recherche.html" style="color:var(--orange);font-weight:700">Explorer les logements</a></p>
+  <form id="contact"><div class="two"><div class="field"><label for="c-nom">Nom</label><input id="c-nom" required></div><div class="field"><label for="c-mail">Email</label><input id="c-mail" type="email" required></div></div>
+   <div class="field"><label for="sujet">Sujet</label><input id="sujet" value="Question générale"></div>
+   <div class="field"><label for="c-msg">Message</label><textarea id="c-msg" required></textarea></div>
+   <button class="btn btn-o" type="submit">Envoyer</button></form>
+  <div id="sent" hidden class="alert"><b>Merci !</b> Ceci est une démonstration : votre message n’a pas été envoyé.</div>
+ </div></div></main>
+<div id="site-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trouver un logement – DEKOUWAYE</title>
+<meta name="description" content="Recherchez un logement par localisation, type et budget.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="search" class="">
+<div id="site-header"></div>
+<main class="pale-page"><div class="wrap">
+  <div class="page-top"><span class="eyebrow">Explorer</span><h1>Trouvez votre prochain logement</h1></div>
+  <form class="filters" id="filters" method="get" action="recherche.html">
+    <div class="f"><label for="lieu">Localisation</label><input id="lieu" name="lieu" placeholder="Ville ou quartier"></div>
+    <div class="f"><label for="type">Type de logement</label><select id="type" name="type"><option value="">Tous</option><option>Chambre</option><option>Studio</option><option>Appartement</option><option>Maison</option></select></div>
+    <div class="f"><label for="min">Prix minimum (FCFA)</label><input id="min" name="min" type="number" min="0" step="5000" placeholder="Minimum"></div>
+    <div class="f"><label for="max">Prix maximum (FCFA)</label><input id="max" name="max" type="number" min="0" step="5000" placeholder="Maximum"></div>
+    <div class="row"><div><button class="btn btn-o" type="submit">Rechercher</button> <button class="reset" type="button" id="reset">Réinitialiser</button></div>
+      <div class="f" style="min-width:220px"><label for="tri">Trier par</label><select id="tri" name="tri"><option value="">Pertinence</option><option value="asc">Prix croissant</option><option value="desc">Prix décroissant</option></select></div></div>
+  </form>
+  <p class="count" id="count"></p>
+  <div class="grid results" id="results"></div>
+</div></main>
+<div id="site-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
+
+# DEKOUWAYE – Site web
+
+Site statique (HTML, CSS, JavaScript) : aucune installation, aucun serveur à configurer.
+
+## Contenu du dossier
+- `index.html` : accueil (recherche, annonces, quartiers…)
+- `recherche.html` : recherche avec filtres (lieu, type, prix, tri)
+- `logement.html` : détail d'un logement (galerie, contact, favoris)
+- `favoris.html`, `publier.html` (6 étapes), `a-propos.html`, `contact.html`, `connexion.html`
+- `css/style.css` : couleurs et mise en page (couleurs en haut du fichier : `--navy`, `--orange`)
+- `js/data.js` : **la liste des logements** (c'est ici que vous ajoutez/modifiez vos annonces)
+- `js/app.js` : le fonctionnement du site
+- `assets/` : logos et images
+
+## 1. Ouvrir dans VS Code et tester
+1. Décompressez le zip, puis VS Code > Fichier > Ouvrir le dossier… > choisissez `dekouwaye-site`.
+2. Installez l'extension **Live Server** (icône des extensions à gauche, cherchez « Live Server », Ritwick Dey).
+3. Clic droit sur `index.html` > **Open with Live Server**. Le site s'ouvre dans votre navigateur et se
+   rafraîchit à chaque Ctrl + S.
+
+## 2. Mettre le site en ligne (gratuit)
+
+### Option A – Netlify (la plus simple, sans compte GitHub)
+1. Créez un compte sur https://app.netlify.com
+2. Allez sur https://app.netlify.com/drop
+3. **Glissez le dossier `dekouwaye-site`** dans la page. Votre site est en ligne en quelques secondes,
+   avec une adresse du type `https://nom-aleatoire.netlify.app`.
+4. Pour changer le nom : Site configuration > Change site name.
+5. Pour mettre à jour : refaites le glisser-déposer (Deploys > glissez de nouveau le dossier).
+
+### Option B – GitHub Pages (mises à jour automatiques depuis VS Code)
+1. Créez un compte sur https://github.com et un dépôt public nommé `dekouwaye`.
+2. Dans VS Code : Contrôle de code source (icône à gauche) > **Initialiser le dépôt** > saisissez un message
+   > Commit > **Publier la branche** (connectez-vous à GitHub si demandé).
+3. Sur GitHub : Settings > Pages > Source : *Deploy from a branch* > branche `main`, dossier `/ (root)` > Save.
+4. Après 1 à 2 minutes : `https://VOTRE-NOM.github.io/dekouwaye/`.
+5. Pour mettre à jour : modifiez, Commit, puis Sync dans VS Code.
+
+### Option C – Vercel
+Compte sur https://vercel.com > Add New > Project > importez le dépôt GitHub > Deploy.
+
+## 3. Nom de domaine (optionnel)
+Pour une adresse comme `dekouwaye.com` ou `dekouwaye.sn` : achetez le domaine chez un bureau d'enregistrement,
+puis dans Netlify : Domain management > Add a domain, et suivez les instructions.
+
+## 4. Ajouter ou modifier un logement
+Ouvrez `js/data.js`, copiez un bloc `{ id: 1, ... }`, collez-le à la suite, changez le numéro `id`
+(unique) et les informations. Pour vos propres photos, mettez-les dans `assets/` et écrivez par exemple
+`photos: ['assets/mon-studio-1.jpg']`.
+
+## À savoir
+- Les annonces sont **des exemples** ; les photos viennent de Pexels (à remplacer par vos photos réelles).
+- Les favoris et les annonces publiées via « Publier une annonce » sont enregistrés **dans le navigateur
+  du visiteur** (pas sur un serveur) : les autres visiteurs ne les voient pas. Pour de vraies annonces partagées
+  entre utilisateurs, il faudra plus tard une base de données (Firebase ou Supabase).
+- Le formulaire de contact n'envoie pas de message ; email, téléphone et réseaux sociaux officiels sont à ajouter
+  dans `contact.html` et dans le pied de page (`js/app.js`, fonction `layout`).
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connexion – DEKOUWAYE</title>
+<meta name="description" content="Espace personnel.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login" class="">
+<div id="site-header"></div>
+<main><div class="wrap narrow"><span class="eyebrow">Votre espace</span><h2>Bienvenue sur DEKOUWAYE</h2>
+ <p>La connexion n’est pas disponible dans cette démonstration. Vous pouvez explorer les logements et enregistrer des favoris pendant votre visite.</p>
+ <a class="btn btn-o" href="recherche.html">Explorer les logements</a></div></main>
+<div id="site-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEKOUWAYE – Trouvez le logement qui vous ressemble</title>
+<meta name="description" content="Trouvez facilement une chambre, un studio, un appartement ou une maison au Sénégal.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home" class="">
+<div id="site-header"></div>
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">L’immobilier, autrement</span>
+  <h1>Trouvez le logement qui vous ressemble.</h1>
+  <p class="lead">Chambre, studio, appartement ou maison : trouvez facilement un logement adapté à vos besoins, votre localisation et votre budget.</p>
+  <form class="searchbar" action="recherche.html" method="get">
+    <div class="sfield"><label for="h-lieu">Où souhaitez-vous vivre ?</label><input id="h-lieu" name="lieu" placeholder="Ville ou quartier"></div>
+    <div class="sfield"><label for="h-type">Type de logement</label>
+      <select id="h-type" name="type"><option value="">Tous les types</option><option>Chambre</option><option>Studio</option><option>Appartement</option><option>Maison</option></select></div>
+    <div class="sfield"><label for="h-budget">Budget</label>
+      <select id="h-budget" name="budget"><option value="">Tous les budgets</option><option value="100000">100 000 FCFA max.</option><option value="200000">200 000 FCFA max.</option><option value="400000">400 000 FCFA max.</option></select></div>
+    <button class="btn btn-o" type="submit">Rechercher</button>
+  </form>
+  <p class="quick">Recherche rapide · Logements vérifiés · Contact direct</p>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="section-head"><h2>Des logements qui pourraient vous plaire</h2><p>Découvrez une sélection de logements disponibles sur DEKOUWAYE. <span class="demo-note">Annonces de démonstration · photos d’illustration.</span></p></div>
+  <div class="grid" id="home-listings"></div>
+  <div class="center"><a class="btn btn-l" href="recherche.html">Voir tous les logements →</a></div>
+</div></section>
+
+<section class="section pale"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">Un logement pour chaque projet</span><h2>Explorez selon vos envies</h2></div>
+  <div class="tiles t4" id="cats"></div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="section-head"><h2>Trouvez votre logement au bon endroit</h2></div>
+  <div class="tiles t4" id="quartiers"></div>
+  <p class="demo-note" style="margin-top:12px">Photographies d’ambiance : elles ne représentent pas nécessairement ces quartiers.</p>
+</div></section>
+
+<section class="section pale"><div class="wrap">
+  <div class="section-head"><h2>Trouver un logement n’a jamais été aussi simple</h2></div>
+  <div class="steps">
+    <div class="step"><div class="step-n">01</div><h3>Recherchez</h3><p>Choisissez votre localisation, votre budget et le logement souhaité.</p></div>
+    <div class="step"><div class="step-n">02</div><h3>Explorez</h3><p>Comparez les annonces et découvrez les détails des logements.</p></div>
+    <div class="step"><div class="step-n">03</div><h3>Contactez</h3><p>Préparez votre prise de contact avec le propriétaire.</p></div>
+    <div class="step"><div class="step-n">04</div><h3>Emménagez</h3><p>Choisissez le logement qui correspond à votre projet.</p></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap split">
+  <img src="https://images.pexels.com/photos/7489091/pexels-photo-7489091.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Propriétaire remettant les clés" onerror="this.onerror=null;this.src='assets/placeholder.svg'">
+  <div><span class="eyebrow">Espace propriétaires</span><h2>Vous avez un logement à louer ?</h2>
+  <p>Publiez votre annonce sur DEKOUWAYE et présentez votre logement aux personnes qui recherchent un bien immobilier.</p>
+  <a class="btn btn-o" href="publier.html">Publier une annonce</a></div>
+</div></section>
+
+<section class="section navy"><div class="wrap split">
+  <div><span class="eyebrow" style="color:var(--o300)">Pour aller à l’essentiel</span><h2>L’essentiel, sans complication.</h2>
+  <p class="muted" style="color:#e2e8f0">Une expérience conçue autour de votre recherche immobilière.</p></div>
+  <div class="perks">
+    <div class="perk"><i></i><b>Recherche simplifiée</b></div><div class="perk"><i></i><b>Gain de temps</b></div>
+    <div class="perk"><i></i><b>Recherche par localisation</b></div><div class="perk"><i></i><b>Mise en relation directe</b></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap split">
+  <div><span class="eyebrow">Notre mission</span><h2>Le logement, plus accessible.</h2>
+  <p>Faciliter l’accès au logement au Sénégal grâce à une expérience numérique simple, rapide et accessible.</p>
+  <p class="values">Simplicité · Rapidité · Accessibilité · Confiance</p>
+  <a class="btn btn-l" href="a-propos.html">Découvrir DEKOUWAYE</a></div>
+  <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Équipe au travail" onerror="this.onerror=null;this.src='assets/placeholder.svg'">
+</div></section>
+</main>
+<div id="site-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
+
+[build]
+  publish = "."
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publier une annonce – DEKOUWAYE</title>
+<meta name="description" content="Présentez votre logement sur DEKOUWAYE.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="publish" class="">
+<div id="site-header"></div>
+<main class="pale-page"><div class="wrap">
+ <div class="page-top" style="max-width:952px;margin:auto"><span class="eyebrow">Espace propriétaires</span><h1>Présentez votre logement</h1>
+ <p class="muted" style="margin-top:8px">Parcours de démonstration : l’annonce est enregistrée uniquement sur votre appareil et aucune coordonnée n’est transmise.</p></div>
+ <form class="form-card" id="pub" onsubmit="return false" novalidate>
+  <div class="steps-bar"><span class="dot on">1</span><span class="dot">2</span><span class="dot">3</span><span class="dot">4</span><span class="dot">5</span><span class="dot">6</span></div>
+  <div class="bar"><i></i></div>
+  <div class="step-box"><h2>1. Informations générales</h2>
+    <div class="field"><label for="titre">Titre de l’annonce *</label><input id="titre" name="titre" required placeholder="Ex. : Studio meublé à Mermoz"></div>
+    <div class="field"><label for="ptype">Type de logement *</label><select id="ptype" name="type" required><option value="">Choisir</option><option>Chambre</option><option>Studio</option><option>Appartement</option><option>Maison</option></select></div>
+    <div class="field"><label for="desc">Description *</label><textarea id="desc" name="desc" required placeholder="Décrivez votre logement…"></textarea></div></div>
+  <div class="step-box"><h2>2. Localisation</h2>
+    <div class="field"><label for="ville">Ville *</label><input id="ville" name="ville" required placeholder="Ex. : Dakar"></div>
+    <div class="field"><label for="quartier">Quartier *</label><input id="quartier" name="quartier" required placeholder="Ex. : Mermoz"></div>
+    <div class="field"><label for="repere">Repère ou adresse approximative</label><input id="repere" name="repere" placeholder="Ex. : près d’un lieu connu"></div></div>
+  <div class="step-box"><h2>3. Prix et caractéristiques</h2><div class="two">
+    <div class="field"><label for="prix">Loyer mensuel en FCFA *</label><input id="prix" name="prix" type="number" min="1" required placeholder="150000"></div>
+    <div class="field"><label for="chambres">Nombre de chambres *</label><input id="chambres" name="chambres" type="number" min="1" required value="1"></div>
+    <div class="field"><label for="surface">Superficie en m², si connue</label><input id="surface" name="surface" type="number" min="0" placeholder="35"></div>
+    <div class="field"><label for="meuble">Ameublement *</label><select id="meuble" name="meuble" required><option value="">Choisir</option><option>Meublé</option><option>Non meublé</option></select></div>
+    <div class="field"><label for="dispo">Disponibilité *</label><select id="dispo" name="dispo" required><option value="">Choisir</option><option>Disponible</option><option>À vérifier</option></select></div>
+    <div class="field"><label for="equip">Équipements (séparés par des virgules)</label><input id="equip" name="equip" placeholder="Ex. : balcon, cuisine équipée"></div></div></div>
+  <div class="step-box"><h2>4. Photos</h2>
+    <div class="drop"><p><b>Ajoutez jusqu’à 4 photos de votre logement</b></p><p class="muted" style="margin:8px 0 16px">Formats JPG ou PNG · la première photo sera la photo principale</p><input type="file" id="photos" accept="image/*" multiple></div>
+    <div class="previews" id="previews"></div></div>
+  <div class="step-box"><h2>5. Contact</h2>
+    <div class="field"><label for="nom">Nom du contact *</label><input id="nom" name="nom" required></div>
+    <div class="field"><label for="tel">Téléphone *</label><input id="tel" name="tel" type="tel" required></div>
+    <div class="field"><label for="mail">Email</label><input id="mail" name="mail" type="email"></div></div>
+  <div class="step-box"><h2>6. Aperçu et confirmation</h2><p class="muted" style="margin-bottom:16px">Vérifiez les informations de votre annonce avant de la publier.</p><ul class="recap" id="recap"></ul></div>
+  <div class="actions"><button type="button" class="btn btn-l" id="prev">Annuler</button><button type="button" class="btn btn-o" id="next">Continuer</button></div>
+ </form></div></main>
+<div id="site-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>À propos – DEKOUWAYE</title>
+<meta name="description" content="Notre mission : faciliter l’accès au logement au Sénégal.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="about" class="">
+<div id="site-header"></div>
+<main><section class="section"><div class="wrap split">
+ <div><span class="eyebrow">À propos</span><h2>Une autre façon de chercher chez soi.</h2>
+ <p>DEKOUWAYE imagine une recherche de logement plus simple au Sénégal. Notre mission : faciliter l’accès au logement grâce à une expérience numérique simple, rapide et accessible.</p>
+ <p class="values">Simplicité · Rapidité · Accessibilité · Confiance</p><a class="btn btn-o" href="recherche.html">Trouver un logement</a></div>
+ <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="" onerror="this.onerror=null;this.src='assets/placeholder.svg'">
+</div></section></main>
+<div id="site-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logement – DEKOUWAYE</title>
+<meta name="description" content="Détail du logement.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="detail" class="">
+<div id="site-header"></div>
+<main><div class="wrap"><a class="back" href="recherche.html">← Retour aux logements</a><div id="detail"></div></div></main>
+<div id="site-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="#DDE4E8"/><g fill="#9AA9B3"><path d="M200 95l-70 60h20v50h100v-50h20z"/></g></svg>
+
+/* DEKOUWAYE – feuille de style */
+:root{--navy:#102C44;--orange:#ED651B;--orange-d:#d4540f;--muted:#61717D;--pale:#F5F7F8;--line:#E5E9EB;--o300:#FDBA74;--r:14px;--sh:0 8px 24px rgba(16,44,68,.10)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--navy);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1192px,100% - 40px);margin-inline:auto}
+h1,h2,h3{letter-spacing:-.02em;line-height:1.15;font-weight:800}
+h2{font-size:clamp(28px,4vw,40px)}
+.muted{color:var(--muted)}
+.eyebrow{display:block;font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
+.section{padding:80px 0}
+.section.pale{background:var(--pale)}
+.section.navy{background:var(--navy);color:#fff}
+.section.navy .muted{color:#e2e8f0}
+.section-head{margin-bottom:36px}
+.section-head p{margin-top:10px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:700 15px 'DM Sans',sans-serif;padding:13px 22px;border-radius:9px;transition:.15s}
+.btn-o{background:var(--orange);color:#fff}.btn-o:hover{background:var(--orange-d)}
+.btn-l{background:#fff;color:var(--navy);border:1px solid #CBD4D9}.btn-l:hover{border-color:var(--navy)}
+.btn-block{width:100%}
+.center{text-align:center;margin-top:36px}
+
+/* header */
+.hd{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 2px 14px rgba(16,44,68,.08)}
+.hd-in{display:flex;align-items:center;gap:28px;height:78px}
+.logo img{height:44px;width:auto}
+.menu{display:flex;align-items:center;flex:1;gap:28px}
+.nav{display:flex;gap:26px;flex:1}
+.nav a,.hd-r a:not(.btn){font-weight:500;font-size:15px;padding:6px 0;border-bottom:2px solid transparent}
+.nav a:hover,.nav a.on{color:var(--orange);border-color:var(--orange)}
+.hd-r{display:flex;align-items:center;gap:22px}
+#favcount{background:var(--orange);color:#fff;border-radius:20px;font-size:11px;padding:1px 7px;margin-left:2px}
+.burger{display:none;margin-left:auto;background:none;border:0;font-size:28px;cursor:pointer;color:var(--navy)}
+
+/* hero */
+.hero{position:relative;color:#fff;background:linear-gradient(rgba(16,44,68,.72),rgba(16,44,68,.72)),url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover,var(--navy);padding:140px 0 110px}
+.hero .eyebrow{color:var(--o300)}
+.hero h1{font-size:clamp(36px,6vw,64px);max-width:780px;margin-bottom:20px}
+.hero p.lead{font-size:18px;max-width:640px;margin-bottom:36px}
+.searchbar{background:#fff;border-radius:16px;box-shadow:var(--sh);display:grid;grid-template-columns:1.4fr 1fr 1fr auto;gap:0;align-items:stretch;padding:12px;max-width:1060px;color:var(--navy)}
+.sfield{display:flex;flex-direction:column;gap:2px;padding:6px 18px;border-right:1px solid var(--line);min-width:0}
+.sfield:nth-child(3){border-right:0}
+.sfield label{font-size:12px;font-weight:800}
+.sfield input,.sfield select{border:0;outline:0;background:transparent;font:500 15px 'DM Sans',sans-serif;color:#314657;padding:4px 0;width:100%;cursor:pointer}
+.sfield input{cursor:text}
+.searchbar .btn{padding:0 34px;font-size:16px}
+.quick{margin-top:24px;font-weight:700}
+
+/* cartes */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{position:relative;background:#fff;border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+.card:hover{transform:translateY(-4px)}
+.card-img{position:relative;display:block;height:225px;background:#DDE4E8}
+.card-img img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;left:15px;top:15px;background:#fff;font-size:12px;font-weight:800;padding:5px 11px;border-radius:6px}
+.heart{position:absolute;right:15px;top:14px;width:39px;height:39px;border-radius:50%;border:0;background:#fff;cursor:pointer;font-size:19px;color:#9AA9B3;display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.heart.on{color:var(--orange)}
+.card-b{padding:18px 20px 20px;display:flex;flex-direction:column;gap:4px;flex:1}
+.card-b .eyebrow{font-size:12px;margin:0}
+.card-b h3{font-size:18px;line-height:1.3}
+.card-b p{font-size:14px;color:var(--muted)}
+.card-f{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding-top:14px;border-top:1px solid #F1F5F9}
+.card-f b{font-size:16px;font-weight:800}
+.card-f a{font-size:14px;font-weight:700;color:var(--orange)}
+.demo-note{font-size:12px;color:var(--muted)}
+
+/* tuiles */
+.tiles{display:grid;gap:16px}
+.tiles.t4{grid-template-columns:repeat(4,1fr)}
+.tile{position:relative;border-radius:12px;overflow:hidden;color:#fff;background:#B7C4CC;display:block}
+.tile img{width:100%;height:100%;object-fit:cover;transition:.3s}
+.tile:hover img{transform:scale(1.05)}
+.tile::after{content:'';position:absolute;inset:0;background:rgba(16,44,68,.32)}
+.tile span{position:absolute;left:18px;bottom:16px;z-index:2;font-weight:800;font-size:20px}
+.tile.big{height:256px}.tile.sm{height:176px}
+
+/* étapes / avantages */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.step-n{width:48px;height:48px;border-radius:50%;background:rgba(237,101,27,.12);color:var(--orange);font-weight:800;display:grid;place-items:center;margin-bottom:16px}
+.step h3{font-size:19px;margin-bottom:8px}.step p{color:var(--muted);font-size:15px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.split img{border-radius:12px;width:100%;height:430px;object-fit:cover;background:#CBD4DA}
+.split p{color:var(--muted);margin:16px 0 26px;font-size:16px}
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.perk i{display:block;width:36px;height:36px;border-radius:50%;background:rgba(253,186,116,.25);position:relative;margin-bottom:14px}
+.perk i::after{content:'';position:absolute;inset:11px;border-radius:50%;background:var(--o300)}
+.perk b{font-size:19px}
+.values{font-weight:700;margin-bottom:26px!important;color:var(--navy)!important}
+
+/* pages internes */
+.page-top{padding:60px 0 20px}
+.page-top h1{font-size:clamp(30px,4vw,40px)}
+.filters{background:#fff;border-radius:12px;box-shadow:var(--sh);padding:22px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px 12px;margin:24px 0}
+.f label,.field label{display:block;font-size:12px;font-weight:800;margin-bottom:6px}
+.f input,.f select,.field input,.field select,.field textarea{width:100%;font:500 15px 'DM Sans',sans-serif;padding:12px 14px;border:1px solid #DCE3E7;border-radius:8px;background:#fff;color:var(--navy)}
+.field textarea{min-height:120px;resize:vertical}
+.f input:focus,.f select:focus,.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--orange);border-color:transparent}
+.filters .row{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.reset{font-weight:700;text-decoration:underline;cursor:pointer;background:none;border:0;font-size:14px;color:var(--navy)}
+.results{padding-bottom:80px}
+.empty{background:#fff;border-radius:12px;text-align:center;padding:60px 20px}
+.empty h3{font-size:24px;margin-bottom:18px}
+.count{color:var(--muted);margin-bottom:18px}
+.pale-page{background:var(--pale);min-height:60vh}
+
+/* détail */
+.back{display:inline-block;margin:36px 0 18px;font-weight:700;font-size:14px}
+.detail{display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:start;padding-bottom:80px}
+.gal-main{position:relative;height:440px;border-radius:12px;overflow:hidden;background:#DDE4E8}
+.gal-main img{width:100%;height:100%;object-fit:cover}
+.thumbs{display:flex;gap:12px;margin-top:12px}
+.thumbs button{border:3px solid transparent;border-radius:8px;overflow:hidden;width:86px;height:68px;padding:0;cursor:pointer;background:#DDE4E8}
+.thumbs button.on{border-color:var(--orange)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.detail h1{font-size:clamp(28px,4vw,40px);margin:26px 0 6px}
+.detail h2{font-size:20px;margin:34px 0 10px}
+.detail p,.detail li{color:var(--muted);font-size:16px}
+.detail ul{padding-left:20px}
+.side{position:sticky;top:98px;background:#fff;border-radius:var(--r);box-shadow:var(--sh);padding:24px;display:grid;gap:12px}
+.side .price{font-size:28px;font-weight:800}
+.alert{background:#FFF4EC;border:1px solid var(--o300);border-radius:10px;padding:12px 16px;margin:0 0 18px;font-size:14px}
+
+/* formulaires */
+.form-card{background:#fff;border-radius:12px;box-shadow:var(--sh);padding:36px;max-width:952px;margin:24px auto 80px}
+.field{margin-bottom:18px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+.steps-bar{display:flex;justify-content:space-between;margin-bottom:12px}
+.dot{width:33px;height:33px;border-radius:50%;background:#E7ECEF;font-weight:800;font-size:12px;display:grid;place-items:center}
+.dot.on{background:var(--orange);color:#fff}
+.bar{height:6px;background:#F1F5F9;border-radius:3px;margin-bottom:30px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--orange);transition:.3s}
+.form-card h2{font-size:24px;margin-bottom:20px}
+.actions{display:flex;justify-content:space-between;gap:12px;margin-top:26px}
+.step-box{display:none}.step-box.on{display:block}
+.drop{border:2px dashed #CBD5E1;border-radius:12px;background:var(--pale);text-align:center;padding:40px 20px}
+.previews{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.previews img{width:110px;height:84px;object-fit:cover;border-radius:8px}
+.recap{list-style:none;display:grid;gap:8px}
+.recap li{background:var(--pale);border-radius:8px;padding:10px 14px;font-size:15px}
+.recap b{color:var(--orange);margin-right:6px}
+.narrow{max-width:560px;margin:70px auto 100px;text-align:center}
+.narrow p{color:var(--muted);margin:16px 0 28px}
+
+/* footer */
+.ft{background:var(--navy);color:#CBD5E1;padding:56px 0 0}
+.ft-g{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:40px}
+.ft img{height:44px;width:auto;margin-bottom:14px}
+.ft h4{color:#fff;font-size:16px;margin-bottom:14px}
+.ft a{display:block;font-size:14px;margin-bottom:9px}.ft a:hover{color:#fff}
+.ft p{font-size:14px}
+.ft-b{border-top:1px solid rgba(255,255,255,.2);margin-top:40px;padding:20px 0;font-size:14px}
+
+@media(max-width:980px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .tiles.t4{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .split,.detail{grid-template-columns:1fr}
+  .side{position:static}
+  .filters{grid-template-columns:1fr 1fr}
+  .ft-g{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .hd-in{height:64px}.logo img{height:36px}
+  .burger{display:block}
+  .menu{display:none;position:absolute;left:0;right:0;top:64px;background:#fff;flex-direction:column;align-items:flex-start;padding:16px 20px 24px;gap:18px;box-shadow:0 12px 24px rgba(16,44,68,.12)}
+  .menu.open{display:flex}
+  .nav,.hd-r{flex-direction:column;align-items:flex-start;gap:14px}
+  .hero{padding:90px 0 70px}
+  .searchbar{grid-template-columns:1fr;padding:14px}
+  .sfield{border-right:0;border-bottom:1px solid var(--line);padding:10px 8px}
+  .searchbar .btn{height:52px;margin-top:12px}
+  .section{padding:56px 0}
+  .grid,.steps,.perks,.two,.filters{grid-template-columns:1fr}
+  .gal-main{height:280px}
+  .split img{height:280px}
+  .form-card{padding:22px}
+}
+
+/* DEKOUWAYE – logique du site (menu, recherche, détail, favoris, publication) */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const fcfa = n => Number(n).toLocaleString('fr-FR').replace(/[  ]/g, ' ') + ' FCFA';
+const norm = s => (s || '').toString().normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const PH = 'assets/placeholder.svg';
+const imgTag = (src, alt) => `<img src="${esc(src || PH)}" alt="${esc(alt || '')}" loading="lazy" onerror="this.onerror=null;this.src='${PH}'">`;
+
+function store(k, def) { try { const v = JSON.parse(localStorage.getItem(k)); return v === null ? def : v; } catch (e) { return def; } }
+function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch (e) { return false; } }
+const allLogements = () => LOGEMENTS.concat(store('dek_annonces', []));
+const getFavs = () => store('dek_favs', []);
+const params = () => new URLSearchParams(location.search);
+
+/* ---------- en-tête / pied de page ---------- */
+function layout() {
+  const page = document.body.dataset.page;
+  const on = p => (page === p ? 'on' : '');
+  $('#site-header').outerHTML = `
+  <header class="hd"><div class="wrap hd-in">
+    <a href="index.html" class="logo"><img src="assets/logo.png" alt="DEKOUWAYE"></a>
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <div class="menu" id="menu">
+      <nav class="nav">
+        <a href="index.html" class="${on('home')}">Accueil</a>
+        <a href="recherche.html" class="${on('search')}">Trouver un logement</a>
+        <a href="publier.html" class="${on('publish')}">Publier une annonce</a>
+        <a href="a-propos.html" class="${on('about')}">À propos</a>
+      </nav>
+      <div class="hd-r">
+        <a href="favoris.html">♡ Favoris <span id="favcount">0</span></a>
+        <a href="connexion.html">Se connecter</a>
+        <a class="btn btn-o" href="publier.html">Publier une annonce</a>
+      </div>
+    </div>
+  </div></header>`;
+  $('#site-footer').outerHTML = `
+  <footer class="ft"><div class="wrap">
+    <div class="ft-g">
+      <div><img src="assets/logo-blanc.png" alt="DEKOUWAYE"><p>Trouvez. Visitez. Décidez. Emménagez.</p></div>
+      <div><h4>Explorer</h4><a href="index.html">Accueil</a><a href="recherche.html">Trouver un logement</a><a href="publier.html">Publier une annonce</a><a href="favoris.html">Favoris</a></div>
+      <div><h4>DEKOUWAYE</h4><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a></div>
+      <div><h4>Suivez-nous</h4><p>Les liens vers les réseaux sociaux seront ajoutés lorsque les comptes officiels seront disponibles.</p></div>
+    </div>
+    <div class="ft-b">© ${new Date().getFullYear()} DEKOUWAYE. Tous droits réservés.</div>
+  </div></footer>`;
+  const b = $('.burger'), m = $('#menu');
+  b.addEventListener('click', () => { const o = m.classList.toggle('open'); b.setAttribute('aria-expanded', o); });
+  updateFavCount();
+}
+function updateFavCount() { const c = $('#favcount'); if (c) c.textContent = getFavs().length; }
+
+/* ---------- cartes ---------- */
+function loc(l) { return l.quartier + ', ' + l.ville; }
+function feat(l) { return l.chambres + ' chambre' + (l.chambres > 1 ? 's' : '') + (l.surface ? ' · ' + l.surface + ' m²' : ''); }
+function card(l) {
+  const fav = getFavs().includes(l.id);
+  return `<article class="card">
+    <a class="card-img" href="logement.html?id=${l.id}">${imgTag(l.photos && l.photos[0], l.titre)}<span class="badge">${l.dispo ? 'Disponible' : 'À louer · disponibilité à vérifier'}</span></a>
+    <button class="heart ${fav ? 'on' : ''}" data-fav="${l.id}" aria-label="Ajouter aux favoris" title="Favoris">♥</button>
+    <div class="card-b"><span class="eyebrow">${esc(l.type)}</span>
+      <h3><a href="logement.html?id=${l.id}">${esc(l.titre)}</a></h3>
+      <p>${esc(loc(l))}</p><p>${feat(l)}</p>
+      <div class="card-f"><b>${fcfa(l.prix)} / mois</b><a href="logement.html?id=${l.id}">Voir le logement →</a></div>
+    </div></article>`;
+}
+document.addEventListener('click', e => {
+  const h = e.target.closest('[data-fav]'); if (!h) return;
+  e.preventDefault();
+  const id = Number(h.dataset.fav); let f = getFavs();
+  f = f.includes(id) ? f.filter(x => x !== id) : f.concat(id);
+  save('dek_favs', f); updateFavCount();
+  const p = document.body.dataset.page;
+  if (p === 'favs') renderFavs(); else $$(`[data-fav="${id}"]`).forEach(b => b.classList.toggle('on', f.includes(id)));
+});
+
+/* ---------- accueil ---------- */
+function initHome() {
+  $('#home-listings').innerHTML = allLogements().slice(0, 6).map(card).join('');
+  $('#cats').innerHTML = CATEGORIES.map(c => `<a class="tile big" href="recherche.html?type=${encodeURIComponent(c[0])}">${imgTag(c[2], c[1])}<span>${c[1]}</span></a>`).join('');
+  $('#quartiers').innerHTML = QUARTIERS.map(q => `<a class="tile sm" href="recherche.html?lieu=${encodeURIComponent(q[0])}">${imgTag(q[1], q[0])}<span>${q[0]}</span></a>`).join('');
+}
+
+/* ---------- recherche ---------- */
+function initSearch() {
+  const p = params(), f = $('#filters');
+  ['lieu', 'type', 'min', 'max', 'tri'].forEach(k => { if (f[k] && p.get(k)) f[k].value = p.get(k); });
+  if (p.get('budget') && !p.get('max')) f.max.value = p.get('budget');
+  const lieu = norm(f.lieu.value), type = f.type.value;
+  const min = Number(f.min.value) || 0, max = Number(f.max.value) || Infinity;
+  let r = allLogements().filter(l =>
+    (!lieu || norm(l.quartier + ' ' + l.ville + ' ' + l.titre).includes(lieu)) &&
+    (!type || l.type === type) && l.prix >= min && l.prix <= max);
+  if (f.tri.value === 'asc') r.sort((a, b) => a.prix - b.prix);
+  if (f.tri.value === 'desc') r.sort((a, b) => b.prix - a.prix);
+  $('#count').textContent = r.length + ' résultat' + (r.length > 1 ? 's' : '') + ' · annonces de démonstration';
+  $('#results').innerHTML = r.length ? r.map(card).join('') :
+    `<div class="empty" style="grid-column:1/-1"><h3>Aucun logement ne correspond à votre recherche.</h3><a class="btn btn-o" href="recherche.html">Réinitialiser les filtres</a></div>`;
+  $('#reset').addEventListener('click', () => { location.href = 'recherche.html'; });
+}
+
+/* ---------- détail ---------- */
+function initDetail() {
+  const id = Number(params().get('id')), l = allLogements().find(x => x.id === id), box = $('#detail');
+  if (!l) { box.innerHTML = `<div class="empty"><h3>Ce logement est introuvable.</h3><a class="btn btn-o" href="recherche.html">Voir tous les logements</a></div>`; return; }
+  document.title = l.titre + ' – DEKOUWAYE';
+  const ph = l.photos && l.photos.length ? l.photos : [PH];
+  const fav = getFavs().includes(l.id);
+  const banner = params().get('nouveau') ? `<div class="alert"><b>Votre annonce a été enregistrée sur cet appareil.</b> Il s’agit d’une démonstration : elle n’est pas visible par les autres visiteurs.</div>` : '';
+  box.innerHTML = `${banner}<div class="detail"><div>
+    <div class="gal-main" id="gmain">${imgTag(ph[0], l.titre)}<button class="heart ${fav ? 'on' : ''}" data-fav="${l.id}" aria-label="Favoris">♥</button></div>
+    <div class="thumbs">${ph.map((s, i) => `<button class="${i ? '' : 'on'}" data-i="${i}" aria-label="Photo ${i + 1}">${imgTag(s, '')}</button>`).join('')}</div>
+    <span class="eyebrow" style="margin-top:28px">${esc(l.type)}</span>
+    <h1>${esc(l.titre)}</h1><p>${esc(loc(l))}</p>
+    <h2>Description</h2><p>${esc(l.desc)}</p>
+    <h2>Caractéristiques</h2><p>${feat(l)} · ${l.meuble ? 'Meublé' : 'Non meublé'} · ${l.dispo ? 'Disponible' : 'Disponibilité à vérifier'}</p>
+    <h2>Équipements</h2>${l.equip && l.equip.length ? `<ul>${l.equip.map(e => `<li>${esc(e)}</li>`).join('')}</ul>` : '<p>Non précisés.</p>'}
+    <h2>Informations importantes</h2><p>Annonce de démonstration. Vérifiez les informations et la disponibilité avant toute démarche.</p>
+    <h2>Localisation</h2><p>${esc(loc(l))} · emplacement précis non communiqué.</p>
+  </div>
+  <aside class="side"><div class="price">${fcfa(l.prix)}</div><div class="muted" style="margin-top:-8px">par mois · annonce de démonstration</div>
+    <a class="btn btn-o btn-block" href="contact.html?logement=${l.id}">Contacter le propriétaire</a>
+    <a class="btn btn-l btn-block" href="contact.html?logement=${l.id}&visite=1">Organiser une visite</a>
+    <button class="btn btn-l btn-block" data-fav="${l.id}" id="favbtn">${fav ? '♥ Dans mes favoris' : '♡ Ajouter aux favoris'}</button>
+  </aside></div>`;
+  $$('.thumbs button').forEach(b => b.addEventListener('click', () => {
+    $('#gmain img').src = ph[b.dataset.i]; $$('.thumbs button').forEach(x => x.classList.toggle('on', x === b));
+  }));
+  $('#favbtn').addEventListener('click', () => { setTimeout(() => { $('#favbtn').textContent = getFavs().includes(l.id) ? '♥ Dans mes favoris' : '♡ Ajouter aux favoris'; }); });
+}
+
+/* ---------- favoris ---------- */
+function renderFavs() {
+  const ids = getFavs(), r = allLogements().filter(l => ids.includes(l.id));
+  $('#favlist').innerHTML = r.length ? `<div class="grid">${r.map(card).join('')}</div>` :
+    `<div class="empty"><h3>Vous n’avez pas encore enregistré de logement.</h3><a class="btn btn-o" href="recherche.html">Explorer les logements</a></div>`;
+}
+
+/* ---------- publier une annonce (6 étapes) ---------- */
+function initPublish() {
+  const form = $('#pub'), steps = $$('.step-box'), dots = $$('.dot'), bar = $('.bar i');
+  let cur = 0, photos = [];
+  const show = n => {
+    cur = n; steps.forEach((s, i) => s.classList.toggle('on', i === n));
+    dots.forEach((d, i) => d.classList.toggle('on', i <= n)); bar.style.width = ((n + 1) / steps.length * 100) + '%';
+    $('#prev').textContent = n === 0 ? 'Annuler' : 'Précédent';
+    $('#next').textContent = n === steps.length - 1 ? 'Publier l’annonce' : 'Continuer';
+    if (n === steps.length - 1) recap();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  const val = k => form.elements[k] ? form.elements[k].value.trim() : '';
+  function recap() {
+    $('#recap').innerHTML = [
+      ['Informations générales', val('titre') + ' · ' + val('type')], ['Localisation', val('quartier') + ', ' + val('ville')],
+      ['Prix et caractéristiques', fcfa(val('prix') || 0) + ' / mois · ' + val('chambres') + ' chambre(s)'],
+      ['Photos', photos.length + ' photo(s)'], ['Contact', val('nom') + ' · ' + val('tel')]
+    ].map(x => `<li><b>✓</b>${esc(x[0])} : ${esc(x[1])}</li>`).join('');
+  }
+  $('#prev').addEventListener('click', () => { if (cur === 0) location.href = 'index.html'; else show(cur - 1); });
+  $('#next').addEventListener('click', () => {
+    const fields = $$('input,select,textarea', steps[cur]);
+    for (const el of fields) if (!el.checkValidity()) { el.reportValidity(); return; }
+    if (cur < steps.length - 1) return show(cur + 1);
+    const l = {
+      id: Date.now(), type: val('type'), titre: val('titre'), quartier: val('quartier'), ville: val('ville'),
+      prix: Number(val('prix')), chambres: Number(val('chambres')), surface: Number(val('surface')) || 0,
+      meuble: val('meuble') === 'Meublé', dispo: val('dispo') === 'Disponible', equip: val('equip') ? val('equip').split(',').map(s => s.trim()).filter(Boolean) : [],
+      desc: val('desc'), photos: photos.length ? photos : [PH]
+    };
+    const list = store('dek_annonces', []); list.unshift(l);
+    if (!save('dek_annonces', list)) { alert('Impossible d’enregistrer : essayez avec moins ou de plus petites photos.'); return; }
+    location.href = 'logement.html?id=' + l.id + '&nouveau=1';
+  });
+  $('#photos').addEventListener('change', async e => {
+    photos = []; const box = $('#previews'); box.innerHTML = '';
+    for (const file of [...e.target.files].slice(0, 4)) {
+      const url = await shrink(file); photos.push(url); box.insertAdjacentHTML('beforeend', `<img src="${url}" alt="">`);
+    }
+  });
+  show(0);
+}
+function shrink(file) {
+  return new Promise(res => {
+    const r = new FileReader();
+    r.onload = () => { const i = new Image(); i.onload = () => {
+      const w = Math.min(800, i.width), h = Math.round(i.height * w / i.width), c = document.createElement('canvas');
+      c.width = w; c.height = h; c.getContext('2d').drawImage(i, 0, 0, w, h); res(c.toDataURL('image/jpeg', .7));
+    }; i.src = r.result; };
+    r.readAsDataURL(file);
+  });
+}
+
+/* ---------- contact ---------- */
+function initContact() {
+  const id = Number(params().get('logement')), l = allLogements().find(x => x.id === id);
+  if (l) { $('#sujet').value = (params().get('visite') ? 'Demande de visite : ' : 'Question sur : ') + l.titre; }
+  $('#contact').addEventListener('submit', e => {
+    e.preventDefault();
+    $('#sent').hidden = false; e.target.hidden = true;
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  layout();
+  const p = document.body.dataset.page;
+  ({ home: initHome, search: initSearch, detail: initDetail, favs: renderFavs, publish: initPublish, contact: initContact }[p] || (() => { }))();
+});
+
+/* DEKOUWAYE – annonces de démonstration.
+   Pour ajouter un logement : copiez un bloc { ... }, changez l'id (numéro unique) et les informations.
+   Photos : remplacez les liens par vos propres images (ex. "assets/mon-photo.jpg"). */
+const px = (id, w) => 'https://images.pexels.com/photos/' + id + '/pexels-photo-' + id + '.jpeg?auto=compress&cs=tinysrgb&w=' + (w || 900);
+
+const LOGEMENTS = [
+  { id: 1, type: 'Appartement', titre: 'Appartement lumineux aux Almadies', quartier: 'Almadies', ville: 'Dakar',
+    prix: 350000, chambres: 2, surface: 92, meuble: true, dispo: true,
+    equip: ['Cuisine équipée', 'Balcon'],
+    desc: 'Un appartement lumineux aux volumes confortables, pensé pour une vie quotidienne agréable.',
+    photos: [px(1918291), px(271618), px(1910472)] },
+  { id: 2, type: 'Studio', titre: 'Studio confortable à Mermoz', quartier: 'Mermoz', ville: 'Dakar',
+    prix: 175000, chambres: 1, surface: 38, meuble: true, dispo: true,
+    equip: ['Coin cuisine', 'Salle d’eau'],
+    desc: 'Un espace fonctionnel et accueillant pour s’installer simplement.',
+    photos: [px(6782426), px(6447377)] },
+  { id: 3, type: 'Maison', titre: 'Maison familiale avec jardin', quartier: 'Ouakam', ville: 'Dakar',
+    prix: 450000, chambres: 3, surface: 150, meuble: false, dispo: true,
+    equip: ['Jardin', 'Terrasse'],
+    desc: 'Une maison spacieuse offrant de la place pour les moments partagés.',
+    photos: [px(34277690)] },
+  { id: 4, type: 'Chambre', titre: 'Chambre pratique à Liberté 6', quartier: 'Liberté 6', ville: 'Dakar',
+    prix: 85000, chambres: 1, surface: 18, meuble: true, dispo: true,
+    equip: ['Rangements'],
+    desc: 'Une chambre simple et pratique pour votre quotidien.',
+    photos: [px(1743229)] },
+  { id: 5, type: 'Appartement', titre: 'Appartement contemporain aux Parcelles', quartier: 'Parcelles Assainies', ville: 'Dakar',
+    prix: 240000, chambres: 2, surface: 76, meuble: false, dispo: true,
+    equip: ['Cuisine', 'Séjour'],
+    desc: 'Un appartement facile à aménager selon vos envies.',
+    photos: [px(2724749)] },
+  { id: 6, type: 'Studio', titre: 'Studio paisible à Guédiawaye', quartier: 'Guédiawaye', ville: 'Dakar',
+    prix: 120000, chambres: 1, surface: 32, meuble: false, dispo: false,
+    equip: ['Séjour', 'Coin cuisine'],
+    desc: 'Un studio compact avec les espaces essentiels.',
+    photos: [px(2029731)] }
+];
+
+const QUARTIERS = [
+  ['Dakar', px(18189724, 600)], ['Almadies', px(13034805, 600)], ['Mermoz', px(30845464, 600)], ['Liberté 6', px(2119713, 600)],
+  ['Ouakam', px(17091309, 600)], ['Parcelles Assainies', px(15010364, 600)], ['Pikine', px(33052786, 600)], ['Guédiawaye', px(34450808, 600)]
+];
+const CATEGORIES = [['Chambre', 'Chambres', px(271624, 700)], ['Studio', 'Studios', px(1571468, 700)], ['Appartement', 'Appartements', px(323780, 700)], ['Maison', 'Maisons', px(186077, 700)]];
