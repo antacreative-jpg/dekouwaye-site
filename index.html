@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEKOUWAYE – Trouvez le logement qui vous ressemble</title>
+<meta name="description" content="Trouvez facilement une chambre, un studio, un appartement ou une maison au Sénégal.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home" class="">
+<div id="site-header"></div>
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">L’immobilier, autrement</span>
+  <h1>Trouvez le logement qui vous ressemble.</h1>
+  <p class="lead">Chambre, studio, appartement ou maison : trouvez facilement un logement adapté à vos besoins, votre localisation et votre budget.</p>
+  <form class="searchbar" action="recherche.html" method="get">
+    <div class="sfield"><label for="h-lieu">Où souhaitez-vous vivre ?</label><input id="h-lieu" name="lieu" placeholder="Ville ou quartier"></div>
+    <div class="sfield"><label for="h-type">Type de logement</label>
+      <select id="h-type" name="type"><option value="">Tous les types</option><option>Chambre</option><option>Studio</option><option>Appartement</option><option>Maison</option></select></div>
+    <div class="sfield"><label for="h-budget">Budget</label>
+      <select id="h-budget" name="budget"><option value="">Tous les budgets</option><option value="100000">100 000 FCFA max.</option><option value="200000">200 000 FCFA max.</option><option value="400000">400 000 FCFA max.</option></select></div>
+    <button class="btn btn-o" type="submit">Rechercher</button>
+  </form>
+  <p class="quick">Recherche rapide · Logements vérifiés · Contact direct</p>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="section-head"><h2>Des logements qui pourraient vous plaire</h2><p>Découvrez une sélection de logements disponibles sur DEKOUWAYE. <span class="demo-note">Annonces de démonstration · photos d’illustration.</span></p></div>
+  <div class="grid" id="home-listings"></div>
+  <div class="center"><a class="btn btn-l" href="recherche.html">Voir tous les logements →</a></div>
+</div></section>
+
+<section class="section pale"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">Un logement pour chaque projet</span><h2>Explorez selon vos envies</h2></div>
+  <div class="tiles t4" id="cats"></div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="section-head"><h2>Trouvez votre logement au bon endroit</h2></div>
+  <div class="tiles t4" id="quartiers"></div>
+  <p class="demo-note" style="margin-top:12px">Photographies d’ambiance : elles ne représentent pas nécessairement ces quartiers.</p>
+</div></section>
+
+<section class="section pale"><div class="wrap">
+  <div class="section-head"><h2>Trouver un logement n’a jamais été aussi simple</h2></div>
+  <div class="steps">
+    <div class="step"><div class="step-n">01</div><h3>Recherchez</h3><p>Choisissez votre localisation, votre budget et le logement souhaité.</p></div>
+    <div class="step"><div class="step-n">02</div><h3>Explorez</h3><p>Comparez les annonces et découvrez les détails des logements.</p></div>
+    <div class="step"><div class="step-n">03</div><h3>Contactez</h3><p>Préparez votre prise de contact avec le propriétaire.</p></div>
+    <div class="step"><div class="step-n">04</div><h3>Emménagez</h3><p>Choisissez le logement qui correspond à votre projet.</p></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap split">
+  <img src="https://images.pexels.com/photos/7489091/pexels-photo-7489091.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Propriétaire remettant les clés" onerror="this.onerror=null;this.src='assets/placeholder.svg'">
+  <div><span class="eyebrow">Espace propriétaires</span><h2>Vous avez un logement à louer ?</h2>
+  <p>Publiez votre annonce sur DEKOUWAYE et présentez votre logement aux personnes qui recherchent un bien immobilier.</p>
+  <a class="btn btn-o" href="publier.html">Publier une annonce</a></div>
+</div></section>
+
+<section class="section navy"><div class="wrap split">
+  <div><span class="eyebrow" style="color:var(--o300)">Pour aller à l’essentiel</span><h2>L’essentiel, sans complication.</h2>
+  <p class="muted" style="color:#e2e8f0">Une expérience conçue autour de votre recherche immobilière.</p></div>
+  <div class="perks">
+    <div class="perk"><i></i><b>Recherche simplifiée</b></div><div class="perk"><i></i><b>Gain de temps</b></div>
+    <div class="perk"><i></i><b>Recherche par localisation</b></div><div class="perk"><i></i><b>Mise en relation directe</b></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap split">
+  <div><span class="eyebrow">Notre mission</span><h2>Le logement, plus accessible.</h2>
+  <p>Faciliter l’accès au logement au Sénégal grâce à une expérience numérique simple, rapide et accessible.</p>
+  <p class="values">Simplicité · Rapidité · Accessibilité · Confiance</p>
+  <a class="btn btn-l" href="a-propos.html">Découvrir DEKOUWAYE</a></div>
+  <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Équipe au travail" onerror="this.onerror=null;this.src='assets/placeholder.svg'">
+</div></section>
+</main>
+<div id="site-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
