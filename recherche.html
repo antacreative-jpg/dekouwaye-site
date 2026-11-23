@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trouver un logement – DEKOUWAYE</title>
+<meta name="description" content="Recherchez un logement par localisation, type et budget.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="search" class="">
+<div id="site-header"></div>
+<main class="pale-page"><div class="wrap">
+  <div class="page-top"><span class="eyebrow">Explorer</span><h1>Trouvez votre prochain logement</h1></div>
+  <form class="filters" id="filters" method="get" action="recherche.html">
+    <div class="f"><label for="lieu">Localisation</label><input id="lieu" name="lieu" placeholder="Ville ou quartier"></div>
+    <div class="f"><label for="type">Type de logement</label><select id="type" name="type"><option value="">Tous</option><option>Chambre</option><option>Studio</option><option>Appartement</option><option>Maison</option></select></div>
+    <div class="f"><label for="min">Prix minimum (FCFA)</label><input id="min" name="min" type="number" min="0" step="5000" placeholder="Minimum"></div>
+    <div class="f"><label for="max">Prix maximum (FCFA)</label><input id="max" name="max" type="number" min="0" step="5000" placeholder="Maximum"></div>
+    <div class="row"><div><button class="btn btn-o" type="submit">Rechercher</button> <button class="reset" type="button" id="reset">Réinitialiser</button></div>
+      <div class="f" style="min-width:220px"><label for="tri">Trier par</label><select id="tri" name="tri"><option value="">Pertinence</option><option value="asc">Prix croissant</option><option value="desc">Prix décroissant</option></select></div></div>
+  </form>
+  <p class="count" id="count"></p>
+  <div class="grid results" id="results"></div>
+</div></main>
+<div id="site-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

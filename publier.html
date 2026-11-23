@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publier une annonce – DEKOUWAYE</title>
+<meta name="description" content="Présentez votre logement sur DEKOUWAYE.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="publish" class="">
+<div id="site-header"></div>
+<main class="pale-page"><div class="wrap">
+ <div class="page-top" style="max-width:952px;margin:auto"><span class="eyebrow">Espace propriétaires</span><h1>Présentez votre logement</h1>
+ <p class="muted" style="margin-top:8px">Parcours de démonstration : l’annonce est enregistrée uniquement sur votre appareil et aucune coordonnée n’est transmise.</p></div>
+ <form class="form-card" id="pub" onsubmit="return false" novalidate>
+  <div class="steps-bar"><span class="dot on">1</span><span class="dot">2</span><span class="dot">3</span><span class="dot">4</span><span class="dot">5</span><span class="dot">6</span></div>
+  <div class="bar"><i></i></div>
+  <div class="step-box"><h2>1. Informations générales</h2>
+    <div class="field"><label for="titre">Titre de l’annonce *</label><input id="titre" name="titre" required placeholder="Ex. : Studio meublé à Mermoz"></div>
+    <div class="field"><label for="ptype">Type de logement *</label><select id="ptype" name="type" required><option value="">Choisir</option><option>Chambre</option><option>Studio</option><option>Appartement</option><option>Maison</option></select></div>
+    <div class="field"><label for="desc">Description *</label><textarea id="desc" name="desc" required placeholder="Décrivez votre logement…"></textarea></div></div>
+  <div class="step-box"><h2>2. Localisation</h2>
+    <div class="field"><label for="ville">Ville *</label><input id="ville" name="ville" required placeholder="Ex. : Dakar"></div>
+    <div class="field"><label for="quartier">Quartier *</label><input id="quartier" name="quartier" required placeholder="Ex. : Mermoz"></div>
+    <div class="field"><label for="repere">Repère ou adresse approximative</label><input id="repere" name="repere" placeholder="Ex. : près d’un lieu connu"></div></div>
+  <div class="step-box"><h2>3. Prix et caractéristiques</h2><div class="two">
+    <div class="field"><label for="prix">Loyer mensuel en FCFA *</label><input id="prix" name="prix" type="number" min="1" required placeholder="150000"></div>
+    <div class="field"><label for="chambres">Nombre de chambres *</label><input id="chambres" name="chambres" type="number" min="1" required value="1"></div>
+    <div class="field"><label for="surface">Superficie en m², si connue</label><input id="surface" name="surface" type="number" min="0" placeholder="35"></div>
+    <div class="field"><label for="meuble">Ameublement *</label><select id="meuble" name="meuble" required><option value="">Choisir</option><option>Meublé</option><option>Non meublé</option></select></div>
+    <div class="field"><label for="dispo">Disponibilité *</label><select id="dispo" name="dispo" required><option value="">Choisir</option><option>Disponible</option><option>À vérifier</option></select></div>
+    <div class="field"><label for="equip">Équipements (séparés par des virgules)</label><input id="equip" name="equip" placeholder="Ex. : balcon, cuisine équipée"></div></div></div>
+  <div class="step-box"><h2>4. Photos</h2>
+    <div class="drop"><p><b>Ajoutez jusqu’à 4 photos de votre logement</b></p><p class="muted" style="margin:8px 0 16px">Formats JPG ou PNG · la première photo sera la photo principale</p><input type="file" id="photos" accept="image/*" multiple></div>
+    <div class="previews" id="previews"></div></div>
+  <div class="step-box"><h2>5. Contact</h2>
+    <div class="field"><label for="nom">Nom du contact *</label><input id="nom" name="nom" required></div>
+    <div class="field"><label for="tel">Téléphone *</label><input id="tel" name="tel" type="tel" required></div>
+    <div class="field"><label for="mail">Email</label><input id="mail" name="mail" type="email"></div></div>
+  <div class="step-box"><h2>6. Aperçu et confirmation</h2><p class="muted" style="margin-bottom:16px">Vérifiez les informations de votre annonce avant de la publier.</p><ul class="recap" id="recap"></ul></div>
+  <div class="actions"><button type="button" class="btn btn-l" id="prev">Annuler</button><button type="button" class="btn btn-o" id="next">Continuer</button></div>
+ </form></div></main>
+<div id="site-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
